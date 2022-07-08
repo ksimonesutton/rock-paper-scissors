@@ -6,29 +6,55 @@
     <title>Rock-Paper-Scissors</title>
 </head>
 <body>
+
+
+
+  
     <script>
         
         let answers = ["Rock", "Paper" , "Scissors"];
-        const playerSelection = "Paper";
+        const playerSelection = "Rock"
         const computerSelection = computerPlay();
+        let playerScore = 0;
+        let computerScore = 0;
+
         
         function computerPlay(){
             return answers[Math.floor(Math.random() * answers.length)];
 
         };
-        function playRound (playerSelection, computerSelection){
+        
+        
+            function playRound (playerSelection, computerSelection){
+             for (let i = 1; i < 6; i++ )
             if (playerSelection === "Rock" && computerSelection === "Scissors" || playerSelection === "Scissors" && computerSelection === "Paper" || playerSelection === "Paper" && computerSelection === "Rock") {
-                return `You win ${playerSelection} beats ${computerSelection}`
+                return playerScore++;
               } else if (playerSelection === computerSelection){
-                return "It's a tie try again!"
+                return "Please Try Again"
               }else{
-                return `You lose! ${computerSelection} beats ${playerSelection}`
+                return computerScore++;;
               }
-            
-        };
-        console.log(computerSelection);
+                                   
+          
+            };
         console.log(playRound(playerSelection, computerSelection));
-    
+        console.log(playerScore);
+        console.log(computerScore);
+        
+        
+        
+
+
+
+        function gameScore (playerScore, computerScore) {
+          if (playerScore > computerScore){
+            return "You win!"
+         }else if (playerScore > computerScore){
+            return "You lose!"
+        }
+      };
+       
+       console.log(gameScore(playerScore, computerScore))
 
        
 
